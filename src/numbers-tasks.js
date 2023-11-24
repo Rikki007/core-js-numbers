@@ -639,13 +639,17 @@ function getHypotenuse(a, b) {
  * 15 => 8
  */
 function getCountOfOddNumbers(number) {
-  const arr = [];
-  for (let i = 0; i <= number; i += 1) {
+  let max = number;
+  if (number < 0) {
+    max = Math.sqrt(number ** 2);
+  }
+  let count = 0;
+  for (let i = 0; i <= max; i += 1) {
     if (i % 2 !== 0) {
-      arr.push(i);
+      count += 1;
     }
   }
-  return arr.length;
+  return count;
 }
 
 module.exports = {
